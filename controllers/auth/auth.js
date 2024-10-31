@@ -27,7 +27,7 @@ const login = async (req, res = response) => {
     if (!userDB) {
       return res.status(400).json({
           ok: false,
-          msg: 'Invalid username or password puto one piece'
+          msg: 'Invalid username or password'
       });
     }
 

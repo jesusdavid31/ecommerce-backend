@@ -9,7 +9,6 @@ const getSales = async(req, res = response) => {
         const page = Number(req.query.page) || 1;
         const limit = Number(req.query.limit) || 5;
         let statusFilter = req.query.is_active || "true";
-        console.log('Entrando al metodo');
 
         statusFilter === "true" ? (statusFilter = true) : (statusFilter = false);
 
@@ -90,8 +89,6 @@ const getSales = async(req, res = response) => {
             },
             { $unwind: { path: "$totalDocuments" } },
         ]);
-
-        // console.log(result);
 
         res.json({
             ok: true,
